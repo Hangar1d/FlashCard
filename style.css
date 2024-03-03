@@ -1,0 +1,350 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #5c1f8c;
+}
+
+.container {
+  width: 90vw;
+  max-width: 62.5em;
+  position: relative;
+  margin: auto;
+}
+
+.add-flashcard-con {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1.2em 1em;
+}
+
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-flashcard-con button {
+  font-size: 1em;
+  background-color: #587ef4;
+  color: #ffffff;
+  padding: 0.8em 1.2em;
+  font-weight: 500;
+  border-radius: 0.4em;
+}
+
+button:hover {
+  background-color: #455a64;
+}
+
+#card-con {
+  margin-top: 1em;
+}
+
+.question-container {
+  width: 90vw;
+  max-width: 34em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #ffffff;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  padding: 3em 2em;
+  border-radius: 0.6em;
+  box-shadow: 0 1em 2em rgba(28, 0, 80, 0.1);
+}
+
+.question-container h2 {
+  font-size: 2.2em;
+  color: #363d55;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 2em;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 11fr 1fr;
+  gap: 1em;
+  margin-bottom: 1em;
+}
+
+.error-con {
+  align-self: center;
+}
+
+#error {
+  color: #ff5353;
+  font-weight: 400;
+}
+
+.fa-xmark {
+  font-size: 1.4em;
+  background-color: #587ef4;
+  height: 1.8em;
+  width: 1.8em;
+  display: grid;
+  place-items: center;
+  color: #ffffff;
+  border-radius: 50%;
+  cursor: pointer;
+  justify-self: flex-end;
+}
+
+label {
+  color: #363d55;
+  font-weight: 600;
+  margin-bottom: 0.3em;
+}
+
+textarea {
+  width: 100%;
+  padding: 0.7em 0.5em;
+  border: 1px solid #d0d0d0;
+  outline: none;
+  color: #414a67;
+  border-radius: 0.3em;
+  resize: none;
+}
+
+textarea:not(:last-child) {
+  margin-bottom: 1.2em;
+}
+
+textarea:focus {
+  border-color: #363d55;
+}
+
+#save-btn {
+  font-size: 1em;
+  background-color: #587ef4;
+  color: #ffffff;
+  padding: 0.6em 0;
+  border-radius: 0.3em;
+  font-weight: 600;
+}
+
+.card-list-container {
+  display: grid;
+  padding: 0.2em;
+  gap: 1.5em;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.card {
+  background-color: #ffffff;
+  box-shadow: 0 0.4em 1.2em rgba(28, 0, 80, 0.08);
+  padding: 1.2em;
+  border-radius: 0.4em;
+  animation: cardEntry 0.5s ease-out forwards;
+}
+
+.question-div,
+.answer-div {
+  text-align: justify;
+}
+
+.question-div {
+  margin-bottom: 0.5em;
+  font-weight: 500;
+  color: #363d55;
+}
+
+.answer-div {
+  margin-top: 1em;
+  font-weight: 400;
+  color: #414a67;
+}
+
+.show-hide-btn {
+  display: block;
+  background-color: #587ef4;
+  color: #ffffff;
+  text-decoration: none;
+  text-align: center;
+  padding: 0.6em 0;
+  border-radius: 0.3em;
+}
+
+.buttons-con {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.edit,
+.delete {
+  background-color: transparent;
+  padding: 0.5em;
+  font-size: 1.2em;
+}
+
+.edit {
+  color: #587ef4;
+}
+
+.delete {
+  color: #ff5353;
+}
+
+.hide {
+  display: none;
+}
+
+@media screen and (max-width: 800px) {
+  .card-list-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8em;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  body {
+    font-size: 14px;
+  }
+  .card-list-container {
+    grid-template-columns: 1fr;
+    gap: 1.2em;
+  }
+}
+
+/* Inspiring quote styling */
+#alien-animation {
+  /* Adjust positioning if necessary */
+  padding-top: 85%; /* Ensures it does not overlap content it shouldn't */
+}
+.inspiring-quote {
+    z-index: 2; /* Ensure it's above other content */
+    position: relative; /* Required for z-index to work */
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background for readability */
+    padding: 1em;
+    border-radius: 8px;
+  }
+
+/* Animation keyframes */
+@keyframes cardEntry {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.ufo {
+  height: 16.87em;
+  width: 11.25em;
+  background: linear-gradient(to bottom, #e6e3f5 90%, #ede544 90%);
+  border-radius: 11.25em 11.25em 0 0;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 40%;
+  animation: float 3s infinite;
+}
+@keyframes float {
+  50% {
+    top: calc(40% + 3.12em);
+  }
+}
+.ufo:before {
+  position: absolute;
+  content: "";
+  width: 11.25em;
+  height: 5.62em;
+  background-color: #eebb22;
+  border-radius: 0 0 5.62em 5.62em;
+  bottom: -5.62em;
+}
+.ufo:after {
+  position: absolute;
+  content: "";
+  height: 1.25em;
+  width: 7.5em;
+  border: 0.62em solid #eebb22;
+  border-radius: 7.5em 7.5em 0 0;
+  left: 1.25em;
+  border-bottom: none;
+  top: 20.62em;
+}
+.alien {
+  position: absolute;
+  height: 11.25em;
+  width: 8.75em;
+  background-color: #40bf60;
+  left: 1.25em;
+  top: 3.93em;
+  border-radius: 8.75em 8.75em 0 0;
+}
+.alien:before {
+  content: "";
+  position: absolute;
+  height: 5.62em;
+  width: 5.62em;
+  background-color: #ffffff;
+  border-radius: 50%;
+  left: 1.56em;
+  top: 1.87em;
+}
+.alien:after {
+  position: absolute;
+  content: "";
+  height: 1.25em;
+  width: 2.5em;
+  border: 0.5em solid #000000;
+  border-bottom: transparent;
+  border-radius: 3.75em 3.75em 0 0;
+  left: 2.5em;
+  top: 3.12em;
+}
+.mouth {
+  position: absolute;
+  height: 1.25em;
+  width: 2.5em;
+  background-color: #118c58;
+  border-radius: 0.31em 0.31em 2.5em 2.5em;
+  left: 3.12em;
+  top: 8.75em;
+}
+.details,
+.details:before {
+  height: 1.56em;
+  width: 3.12em;
+  border: 0.5em solid #40bf60;
+  border-bottom: none;
+  border-radius: 3.12em 3.12em 0 0;
+}
+.details {
+  transform: rotate(65deg);
+}
+.details:before {
+  position: absolute;
+  content: "";
+  transform: rotate(-130deg);
+  left: 1.87em;
+  bottom: 4.68em;
+}
+.details:after {
+  content: "";
+  position: absolute;
+  height: 1.25em;
+  width: 1.25em;
+  background-color: #40bf60;
+  border-radius: 50%;
+  bottom: -0.62em;
+  left: -0.93em;
+  box-shadow: 3.75em -7.5em #40bf60;
+}
+@media screen and (min-width: 700px) {
+  .container {
+    font-size: 20px;
+  }
+}
