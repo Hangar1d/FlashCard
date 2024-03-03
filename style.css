@@ -216,18 +216,16 @@ textarea:focus {
 }
 
 /* Inspiring quote styling */
-
+#alien-animation {
+  /* Adjust positioning if necessary */
+  padding-top: 85%; /* Ensures it does not overlap content it shouldn't */
+}
 .inspiring-quote {
     z-index: 2; /* Ensure it's above other content */
     position: relative; /* Required for z-index to work */
     background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background for readability */
     padding: 1em;
     border-radius: 8px;
-  }
-
-#alien-animation {
-    /* Adjust positioning if necessary */
-    padding-top: 85%; /* Ensures it does not overlap content it shouldn't */
   }
 
 /* Animation keyframes */
@@ -345,7 +343,7 @@ textarea:focus {
   left: -0.93em;
   box-shadow: 3.75em -7.5em #40bf60;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 700px) {
   .container {
     font-size: 20px;
   }
